@@ -1,0 +1,30 @@
+/*********************************************
+ * OPL 20.1.0.0 Data
+ * Author: Alberto Loffredo
+ * Creation Date: 8 nov 2021 at 11:19:43
+ *********************************************/
+SheetConnection my_sheet("current.xlsx");
+
+nStates from SheetRead(my_sheet,"'Sheet1'!A1");
+NrMachines from SheetRead(my_sheet,"'Sheet2'!A1:A2");
+BuffCap from SheetRead(my_sheet,"'Sheet3'!A1:A2");
+
+Lambda = 0.80;
+
+pos1 from SheetRead(my_sheet,"'Sheet4'!A1");
+Alpha from SheetRead(my_sheet, pos1);
+
+pos2 from SheetRead(my_sheet,"'Sheet5'!A1");
+Costs from SheetRead(my_sheet, pos2); 
+
+pos3 from SheetRead(my_sheet,"'Sheet6'!A1");
+Prob from SheetRead(my_sheet, pos3);
+
+pos4 from SheetRead(my_sheet,"'Sheet7'!A1");  
+Mach from SheetRead(my_sheet, pos4);
+
+pos5 from SheetRead(my_sheet,"'Sheet8'!A1");
+x to SheetWrite(my_sheet, pos5);
+
+pos6 from SheetRead(my_sheet,"'Sheet14'!A1");
+OF to SheetWrite(my_sheet, pos6);
